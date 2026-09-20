@@ -1,9 +1,11 @@
+/* Задача автономність зарядної станції
+  Челяда Андрій СШІ-13*/
+
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <iomanip>
 
-/* Задача автономність зарядної станції
-  Челяда Андрій СШІ-13*/
 
 using namespace std;
 
@@ -113,16 +115,14 @@ int main(){
     m = (T - h) * 60;
 
     //  Вивід результатів обчислень користувачу     
-    cout << "Модель станції: " << ModelStation << endl;
-    cout << "Час роботи: " << h << " годин " << m << " хвилин" << endl;
-    cout << "Вт*год втрачено: " << E_loss << endl;
-    cout << "Вт*год корисно використано: " << E_useful << endl;
-    cout << "Вт*год збережено: " << E_stored << endl;
-    cout << "Вт*год ефективна ємність: " << C_eff << endl;
-    cout << "Вт*год початкова ємність: " << capacity << endl;
-    cout << "ККД інвертора: " << eff << endl;
-    cout << "Потужність приладу: " << P << endl;
-    cout << "Рівень заряду станції: " << charge << endl;
-    cout << "Вік станції: " << age << endl;
+    cout << left << setw(40) << "Модель станції:                 " << ModelStation << "\n";
+    cout << left << setw(40) << "Паспортна ємність станції:      " << fixed << setprecision(1) << capacity << " Вт.год\n";
+    cout << left << setw(40) << "Вік станції:                    " << fixed << setprecision(0) << age << " р.\n";
+    cout << left << setw(40) << "Фактична ємність:               " << fixed << setprecision(1) << C_eff << " Вт.год\n";
+    cout << left << setw(40) << "Рівень заряду:                  " << fixed << setprecision(0) << charge << "%\n";
+    cout << left << setw(40) << "ККД інвертора:                  " << fixed << setprecision(2) << eff << "%\n";
+    cout << left << setw(40) << "Запас енергії:                  " << fixed << setprecision(1) << E_stored << " Вт.год\n";
+    cout << left << setw(40) << "Корисна енергія:                " << fixed << setprecision(1) << E_useful << " Вт.год\n";
+    cout << left << setw(40) << "Втрати на перетворення:         " << fixed << setprecision(1) << E_loss << " Вт.год\n";
 
 }
